@@ -1,0 +1,77 @@
+****************
+Git bash
+
+cd /c/CARLOS/Jornada_de_Dados/onboarding
+
+****************
+
+configuracao usada para instalar o git bash no vs code
+
+
+{
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Dracula",
+    "security.workspace.trust.untrustedFiles": "open"
+}
+
+********COMANDOS GIT********
+
+
+***Salvando arwuivos no git***
+
+git init (cria a pasta .git)
+
+ld (lista os arquivos)
+
+ls -all  (monstra tudo)
+
+
+git config --global user.email "you@example.com"   (é necessario cadastrar e mail e usuario antes de fazwr commit)
+  git config --global user.name "Your Name"
+
+git add main.py (adicona o arquivo main.py ao repositorio)
+
+git commit -m "meu primeiro commit"   (salva o arquivo no repositorio)
+
+git log  (mostra o que foi feito)
+
+***Deletando/Removendo e restaurando arquivos no git**
+
+Se eu deletar o arquivo main.py e der um 
+
+git status
+
+ele mostrara Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    main.py
+
+
+
+Significa que ele está em staging mas nao foi commitado, entao consigo voltar com ele usando:
+
+git restore main.py
+
+
+Agora, suponha que  deletei o arquivo e logo em seguida  commitei o arquivo usando
+
+git add main.py
+
+git commit -m "removendo main.py"
+
+
+Par restaurar:
+
+dá um 
+
+git log
+
+git checkout   + o hash do comando onde adicionei o primeiro git  + o nome do arquivo
+
+Ficaria assim no nosso exemplo:
+
+git checkout 1c285f2b95280fbf8b621244a660b004ed1269d1 main.py
+
+git add main.py
+
+git commit -m "salvando meu arquivo main.py novamente"
